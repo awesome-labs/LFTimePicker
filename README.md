@@ -55,10 +55,23 @@ github "yourUsername/yourlibrary"
 ## Usage example
 
 ```swift
-import EZSwiftExtensions
-ez.detectScreenShot { () -> () in
-    print("User took a screen shot")
+
+//1. Create a LFTimePickerController
+let timePicker = LFTimePickerController()
+
+//2. Present the timePicker
+self.navigationController?.pushViewController(timePicker, animated: true)
+
+//3. Implement the LFTimePickerControllerDelegate
+extension ExampleViewController: LFTimePickerControllerDelegate {
+
+	func didFinishTask(start: String, end: String) {
+
+		print(start)
+		print(end)
+	}
 }
+
 ```
 
 ## Release History
