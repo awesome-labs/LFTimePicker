@@ -1,5 +1,5 @@
 # LFTimePicker
-> Selection of start and end times in Swift, Based on Adey Salyard's [design @ Dribbble](https://dribbble.com/shots/1780596-Time-Picker)
+> Custom Time Picker ViewController with Selection of start and end times in Swift :large_orange_diamond:. Based on Adey Salyard's [design @ Dribbble](https://dribbble.com/shots/1780596-Time-Picker)
 
 [![Swift Version][swift-image]][swift-url]
 [![Build Status][travis-image]][travis-url]
