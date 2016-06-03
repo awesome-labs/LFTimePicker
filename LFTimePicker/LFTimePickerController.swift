@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LFTimePickerController.swift
 //  LFTimePicker
 //
 //  Created by Lucas Farah on 6/1/16.
@@ -8,26 +8,18 @@
 
 import UIKit
 
-protocol DetailViewControllerDelegate: class {
-	func didFinishTask(start: String, end: String)
+//MARK: - LFTimePickerDelegate
+protocol LFTimePickerDelegate: class {
+  
+ ///LFTimePickerController: Called after pressing save. Format: hh:mm aa
+	func didPickTime(start: String, end: String)
 }
 
 class LFTimePickerController: UIViewController {
 
-//	@IBOutlet weak var lblAMPM: UILabel!
-//	@IBOutlet weak var lblAMPM2: UILabel!
-
-//	@IBOutlet weak var table: UITableView!
-//
-//	@IBOutlet weak var table2: UITableView!
-
+  //MARK: - Variables
+  weak var delegate: LFTimePickerDelegate?
 	var arr: [String] = []
-
-//	@IBOutlet weak var lblDetail: UILabel!
-//	@IBOutlet weak var lblDetail2: UILabel!
-
-	weak var delegate: DetailViewControllerDelegate?
-
 	var table = UITableView()
 	var table2 = UITableView()
 	var lblDetail = UILabel()
@@ -36,23 +28,34 @@ class LFTimePickerController: UIViewController {
 	var lblAMPM = UILabel()
 	var lblAMPM2 = UILabel()
 
+  //MARK: - Methods
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 
 		self.title = "Change Time"
-    self.view.backgroundColor = UIColor(red: 255 / 255, green: 128 / 255, blue: 0, alpha: 1)
-    
+		self.view.backgroundColor = UIColor(red: 255 / 255, green: 128 / 255, blue: 0, alpha: 1)
+
 		setupTimeArray()
 		setupTables()
 		setupDetailView()
 		setupBottomDetail()
+		setupNavigationBar()
+	}
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+
+  //MARK: Setup
+	func setupNavigationBar() {
 
 		let saveButton = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: #selector(butSave))
 		saveButton.tintColor = .redColor()
-    
+
 		let cancelButton = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: #selector(butCancel))
-    cancelButton.tintColor = .redColor()
+		cancelButton.tintColor = .redColor()
 
 		self.navigationItem.rightBarButtonItem = saveButton
 		self.navigationItem.leftBarButtonItem = cancelButton
@@ -178,17 +181,13 @@ class LFTimePickerController: UIViewController {
 		}
 	}
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
-
+  //MARK: Button Methods
 	func butSave() {
 
 		let time = self.lblDetail.text!
 		let time2 = self.lblDetail2.text!
 
-		delegate?.didFinishTask(time + " \(self.lblAMPM.text!)", end: time2 + " \(self.lblAMPM2.text!)")
+		delegate?.didPickTime(time + " \(self.lblAMPM.text!)", end: time2 + " \(self.lblAMPM2.text!)")
 
 		self.navigationController?.popViewControllerAnimated(true)
 	}
@@ -197,9 +196,9 @@ class LFTimePickerController: UIViewController {
 
 		self.navigationController?.popViewControllerAnimated(true)
 	}
-
 }
 
+//MARK: - UITableViewDataSource
 extension LFTimePickerController: UITableViewDataSource {
 
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -209,7 +208,7 @@ extension LFTimePickerController: UITableViewDataSource {
 
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
 	{
-		var cell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell!
+		var cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell!
 		if !(cell != nil)
 		{
 			cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
@@ -225,6 +224,7 @@ extension LFTimePickerController: UITableViewDataSource {
 
 }
 
+//MARK: - UITableViewDelegate
 extension LFTimePickerController: UITableViewDelegate {
 
 	func scrollViewDidScroll(scrollView: UIScrollView) {

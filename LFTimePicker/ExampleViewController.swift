@@ -10,11 +10,14 @@ import UIKit
 
 class ExampleViewController: UIViewController {
 
+  //MARK: - Outlets
 	@IBOutlet weak var lblStartSelectedTime: UILabel!
 	@IBOutlet weak var lblFinishSelectedTime: UILabel!
 
+  //MARK: - Variables
 	let timePicker = LFTimePickerController()
 
+  //MARK: - Methods
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -24,7 +27,7 @@ class ExampleViewController: UIViewController {
 
 	@IBAction func butShowTime(sender: AnyObject) {
 
-		self.navigationController?.pushViewController(timePicker, animated: true)
+    self.navigationController?.pushViewController(timePicker, animated: true)
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -33,16 +36,15 @@ class ExampleViewController: UIViewController {
 	}
 }
 
-extension ExampleViewController: DetailViewControllerDelegate {
+//MARK: - LFTimePickerDelegate
+extension ExampleViewController: LFTimePickerDelegate {
 
-	func didFinishTask(start: String, end: String) {
-
+	func didPickTime(start: String, end: String) {
 		self.lblStartSelectedTime.text = start
 
 		self.lblFinishSelectedTime.text = end
 
 		print(start)
 		print(end)
-
 	}
 }
