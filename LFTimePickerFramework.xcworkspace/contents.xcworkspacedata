@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:LFTimePickerExample/LFTimePickerExample.xcodeproj">
+      location = "group:LFTimePickerFramework/LFTimePickerFramework.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:LFTimePickerExample/LFTimePickerExample/LFTimePickerFramework/LFTimePickerFramework.xcodeproj">
+      location = "container:LFTimePickerExample/LFTimePickerExample.xcodeproj">
    </FileRef>
 </Workspace>

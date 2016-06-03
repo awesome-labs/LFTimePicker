@@ -10,7 +10,7 @@
 		C25209D21D017AFC00F08992 /* LFTimePickerFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = C25209D11D017AFC00F08992 /* LFTimePickerFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C25209D91D017AFC00F08992 /* LFTimePickerFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C25209CE1D017AFC00F08992 /* LFTimePickerFramework.framework */; };
 		C25209DE1D017AFC00F08992 /* LFTimePickerFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25209DD1D017AFC00F08992 /* LFTimePickerFrameworkTests.swift */; };
-		C25209F21D017B5000F08992 /* LFTimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25209F11D017B5000F08992 /* LFTimePickerController.swift */; };
+		C2D870DE1D017C750064B47C /* LFTimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D870DD1D017C750064B47C /* LFTimePickerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +30,7 @@
 		C25209D81D017AFC00F08992 /* LFTimePickerFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LFTimePickerFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C25209DD1D017AFC00F08992 /* LFTimePickerFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFTimePickerFrameworkTests.swift; sourceTree = "<group>"; };
 		C25209DF1D017AFC00F08992 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C25209F11D017B5000F08992 /* LFTimePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LFTimePickerController.swift; path = ../../../LFTimePickerController.swift; sourceTree = "<group>"; };
+		C2D870DD1D017C750064B47C /* LFTimePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LFTimePickerController.swift; path = ../../LFTimePickerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +73,8 @@
 		C25209D01D017AFC00F08992 /* LFTimePickerFramework */ = {
 			isa = PBXGroup;
 			children = (
-				C25209F11D017B5000F08992 /* LFTimePickerController.swift */,
 				C25209D11D017AFC00F08992 /* LFTimePickerFramework.h */,
+				C2D870DD1D017C750064B47C /* LFTimePickerController.swift */,
 				C25209D31D017AFC00F08992 /* Info.plist */,
 			);
 			path = LFTimePickerFramework;
@@ -197,7 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C25209F21D017B5000F08992 /* LFTimePickerController.swift in Sources */,
+				C2D870DE1D017C750064B47C /* LFTimePickerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +385,7 @@
 				C25209E41D017AFC00F08992 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C25209E51D017AFC00F08992 /* Build configuration list for PBXNativeTarget "LFTimePickerFrameworkTests" */ = {
 			isa = XCConfigurationList;
@@ -393,6 +394,7 @@
 				C25209E71D017AFC00F08992 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
