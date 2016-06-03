@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = "https://twitter.com/7farah7"
   s.platform     = :ios
   s.ios.deployment_target = "9.0"
-  s.source       = { :git => "https://github.com/dekatotoro/SlideMenuControllerSwift.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/awesome-labs/LFTimePicker.git", :tag => s.version }
   s.source_files  = "LFTimePicker/LFTimePickerController.swift"
   s.requires_arc = true
 end
