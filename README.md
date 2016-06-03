@@ -36,17 +36,18 @@ use_frameworks!
 pod 'LFTimePicker'
 ```
 
-To get the full benefits import `YourLibrary` wherever you import UIKit
+To get the full benefits import `LFTimePicker` wherever you import UIKit
 
 ``` swift
 import UIKit
-import YourLibrary
+import LFTimePicker
 ```
+
 #### Carthage
 Create a `Cartfile` that lists the framework and run `carthage bootstrap`. Follow the [instructions](https://github.com/Carthage/Carthage#if-youre-building-for-ios) to add `$(SRCROOT)/Carthage/Build/iOS/YourLibrary.framework` to an iOS project.
 
 ```
-github "yourUsername/yourlibrary"
+github "awesome-labs/LFTimePicker"
 ```
 #### Manually
 1. Download and drop ```LFTimePickerController.swift``` in your project.  
