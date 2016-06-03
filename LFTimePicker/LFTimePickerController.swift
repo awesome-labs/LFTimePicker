@@ -9,16 +9,16 @@
 import UIKit
 
 //MARK: - LFTimePickerDelegate
-protocol LFTimePickerDelegate: class {
-  
- ///LFTimePickerController: Called after pressing save. Format: hh:mm aa
+public protocol LFTimePickerDelegate: class {
+
+	/// LFTimePickerController: Called after pressing save. Format: hh:mm aa
 	func didPickTime(start: String, end: String)
 }
 
-class LFTimePickerController: UIViewController {
+public class LFTimePickerController: UIViewController {
 
-  //MARK: - Variables
-  weak var delegate: LFTimePickerDelegate?
+	// MARK: - Variables
+	public weak var delegate: LFTimePickerDelegate?
 	var arr: [String] = []
 	var table = UITableView()
 	var table2 = UITableView()
@@ -28,8 +28,8 @@ class LFTimePickerController: UIViewController {
 	var lblAMPM = UILabel()
 	var lblAMPM2 = UILabel()
 
-  //MARK: - Methods
-	override func viewDidLoad() {
+	// MARK: - Methods
+	override public func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 
@@ -42,14 +42,14 @@ class LFTimePickerController: UIViewController {
 		setupBottomDetail()
 		setupNavigationBar()
 	}
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
 
-  //MARK: Setup
-	func setupNavigationBar() {
+	override public func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+		// Dispose of any resources that can be recreated.
+	}
+
+	// MARK: Setup
+	public func setupNavigationBar() {
 
 		let saveButton = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: #selector(butSave))
 		saveButton.tintColor = .redColor()
@@ -61,7 +61,7 @@ class LFTimePickerController: UIViewController {
 		self.navigationItem.leftBarButtonItem = cancelButton
 	}
 
-	func setupTables() {
+	public func setupTables() {
 
 		let frame1 = CGRect(x: 30, y: 0, width: 100, height: self.view.bounds.height)
 		table = UITableView(frame: frame1, style: .Plain)
@@ -97,7 +97,7 @@ class LFTimePickerController: UIViewController {
 		self.view.sendSubviewToBack(table2)
 	}
 
-	func setupDetailView() {
+	public func setupDetailView() {
 
 		detailBackgroundView = UIView(frame: CGRect(x: 0, y: (self.view.bounds.height / 5) * 2, width: self.view.bounds.width, height: self.view.bounds.height / 6))
 		detailBackgroundView.backgroundColor = .whiteColor()
@@ -127,7 +127,7 @@ class LFTimePickerController: UIViewController {
 		self.view.addSubview(detailBackgroundView)
 	}
 
-	func setupBottomDetail() {
+	public func setupBottomDetail() {
 
 		let bottomDetailMainBackground = UIView(frame: CGRect(x: 0, y: self.detailBackgroundView.frame.maxY, width: self.view.frame.width, height: 38))
 		bottomDetailMainBackground.backgroundColor = UIColor(red: 255 / 255, green: 128 / 255, blue: 0, alpha: 1)
@@ -156,7 +156,7 @@ class LFTimePickerController: UIViewController {
 		self.view.addSubview(bottomDetailMainShade)
 	}
 
-	func setupTimeArray() {
+	public func setupTimeArray() {
 
 		for _ in 0...8 {
 			arr.append("")
@@ -181,7 +181,7 @@ class LFTimePickerController: UIViewController {
 		}
 	}
 
-  //MARK: Button Methods
+	// MARK: Button Methods
 	func butSave() {
 
 		let time = self.lblDetail.text!
@@ -201,12 +201,12 @@ class LFTimePickerController: UIViewController {
 //MARK: - UITableViewDataSource
 extension LFTimePickerController: UITableViewDataSource {
 
-	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+	public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
 	{
 		return arr.count
 	}
 
-	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+	public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
 	{
 		var cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell!
 		if !(cell != nil)
@@ -227,7 +227,7 @@ extension LFTimePickerController: UITableViewDataSource {
 //MARK: - UITableViewDelegate
 extension LFTimePickerController: UITableViewDelegate {
 
-	func scrollViewDidScroll(scrollView: UIScrollView) {
+	public func scrollViewDidScroll(scrollView: UIScrollView) {
 
 		if table.visibleCells.count > 8 && table2.visibleCells.count > 8 {
 
