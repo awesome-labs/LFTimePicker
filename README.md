@@ -33,7 +33,7 @@ You can use [CocoaPods](http://cocoapods.org/) to install `YourLibrary` by addin
 ```ruby
 platform :ios, '8.0'
 use_frameworks!
-pod 'YourLibrary'
+pod 'LFTimePicker'
 ```
 
 To get the full benefits import `YourLibrary` wherever you import UIKit
