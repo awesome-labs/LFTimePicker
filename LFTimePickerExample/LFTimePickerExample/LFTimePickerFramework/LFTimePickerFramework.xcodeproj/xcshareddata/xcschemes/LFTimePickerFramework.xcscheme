@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C27FE48E1CFFED5400383D7D"
-               BuildableName = "LFTimePicker.app"
-               BlueprintName = "LFTimePicker"
-               ReferencedContainer = "container:LFTimePicker.xcodeproj">
+               BlueprintIdentifier = "C25209CD1D017AFC00F08992"
+               BuildableName = "LFTimePickerFramework.framework"
+               BlueprintName = "LFTimePickerFramework"
+               ReferencedContainer = "container:LFTimePickerFramework.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C27FE4A21CFFED5400383D7D"
-               BuildableName = "LFTimePickerTests.xctest"
-               BlueprintName = "LFTimePickerTests"
-               ReferencedContainer = "container:LFTimePicker.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C27FE4AD1CFFED5400383D7D"
-               BuildableName = "LFTimePickerUITests.xctest"
-               BlueprintName = "LFTimePickerUITests"
-               ReferencedContainer = "container:LFTimePicker.xcodeproj">
+               BlueprintIdentifier = "C25209D71D017AFC00F08992"
+               BuildableName = "LFTimePickerFrameworkTests.xctest"
+               BlueprintName = "LFTimePickerFrameworkTests"
+               ReferencedContainer = "container:LFTimePickerFramework.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C27FE48E1CFFED5400383D7D"
-            BuildableName = "LFTimePicker.app"
-            BlueprintName = "LFTimePicker"
-            ReferencedContainer = "container:LFTimePicker.xcodeproj">
+            BlueprintIdentifier = "C25209CD1D017AFC00F08992"
+            BuildableName = "LFTimePickerFramework.framework"
+            BlueprintName = "LFTimePickerFramework"
+            ReferencedContainer = "container:LFTimePickerFramework.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -71,16 +61,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C27FE48E1CFFED5400383D7D"
-            BuildableName = "LFTimePicker.app"
-            BlueprintName = "LFTimePicker"
-            ReferencedContainer = "container:LFTimePicker.xcodeproj">
+            BlueprintIdentifier = "C25209CD1D017AFC00F08992"
+            BuildableName = "LFTimePickerFramework.framework"
+            BlueprintName = "LFTimePickerFramework"
+            ReferencedContainer = "container:LFTimePickerFramework.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -90,16 +79,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C27FE48E1CFFED5400383D7D"
-            BuildableName = "LFTimePicker.app"
-            BlueprintName = "LFTimePicker"
-            ReferencedContainer = "container:LFTimePicker.xcodeproj">
+            BlueprintIdentifier = "C25209CD1D017AFC00F08992"
+            BuildableName = "LFTimePickerFramework.framework"
+            BlueprintName = "LFTimePickerFramework"
+            ReferencedContainer = "container:LFTimePickerFramework.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

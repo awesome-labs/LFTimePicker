@@ -1,15 +1,15 @@
 //
-//  LFTimePickerTests.swift
-//  LFTimePickerTests
+//  LFTimePickerFrameworkTests.swift
+//  LFTimePickerFrameworkTests
 //
-//  Created by Lucas Farah on 6/1/16.
+//  Created by Lucas Farah on 6/3/16.
 //  Copyright © 2016 Lucas Farah. All rights reserved.
 //
 
 import XCTest
-@testable import LFTimePicker
+@testable import LFTimePickerFramework
 
-class LFTimePickerTests: XCTestCase {
+class LFTimePickerFrameworkTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

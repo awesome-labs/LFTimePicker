@@ -1,0 +1,512 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C25209931D0179D000F08992 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25209921D0179D000F08992 /* AppDelegate.swift */; };
+		C25209951D0179D000F08992 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25209941D0179D000F08992 /* ExampleViewController.swift */; };
+		C25209981D0179D000F08992 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C25209961D0179D000F08992 /* Main.storyboard */; };
+		C252099A1D0179D000F08992 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C25209991D0179D000F08992 /* Assets.xcassets */; };
+		C252099D1D0179D000F08992 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C252099B1D0179D000F08992 /* LaunchScreen.storyboard */; };
+		C25209A81D0179D100F08992 /* LFTimePickerExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25209A71D0179D100F08992 /* LFTimePickerExampleTests.swift */; };
+		C25209B31D0179D100F08992 /* LFTimePickerExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25209B21D0179D100F08992 /* LFTimePickerExampleUITests.swift */; };
+		C25209C31D017A4B00F08992 /* LFTimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25209C21D017A4B00F08992 /* LFTimePickerController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C25209A41D0179D100F08992 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C25209871D0179D000F08992 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C252098E1D0179D000F08992;
+			remoteInfo = LFTimePickerExample;
+		};
+		C25209AF1D0179D100F08992 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C25209871D0179D000F08992 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C252098E1D0179D000F08992;
+			remoteInfo = LFTimePickerExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C252098F1D0179D000F08992 /* LFTimePickerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LFTimePickerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C25209921D0179D000F08992 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C25209941D0179D000F08992 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		C25209971D0179D000F08992 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C25209991D0179D000F08992 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C252099C1D0179D000F08992 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C252099E1D0179D000F08992 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C25209A31D0179D100F08992 /* LFTimePickerExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LFTimePickerExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C25209A71D0179D100F08992 /* LFTimePickerExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFTimePickerExampleTests.swift; sourceTree = "<group>"; };
+		C25209A91D0179D100F08992 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C25209AE1D0179D100F08992 /* LFTimePickerExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LFTimePickerExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C25209B21D0179D100F08992 /* LFTimePickerExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFTimePickerExampleUITests.swift; sourceTree = "<group>"; };
+		C25209B41D0179D100F08992 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C25209C21D017A4B00F08992 /* LFTimePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTimePickerController.swift; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C252098C1D0179D000F08992 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C25209A01D0179D100F08992 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C25209AB1D0179D100F08992 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C25209861D0179D000F08992 = {
+			isa = PBXGroup;
+			children = (
+				C25209911D0179D000F08992 /* LFTimePickerExample */,
+				C25209A61D0179D100F08992 /* LFTimePickerExampleTests */,
+				C25209B11D0179D100F08992 /* LFTimePickerExampleUITests */,
+				C25209901D0179D000F08992 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C25209901D0179D000F08992 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C252098F1D0179D000F08992 /* LFTimePickerExample.app */,
+				C25209A31D0179D100F08992 /* LFTimePickerExampleTests.xctest */,
+				C25209AE1D0179D100F08992 /* LFTimePickerExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C25209911D0179D000F08992 /* LFTimePickerExample */ = {
+			isa = PBXGroup;
+			children = (
+				C25209921D0179D000F08992 /* AppDelegate.swift */,
+				C25209941D0179D000F08992 /* ExampleViewController.swift */,
+				C25209C21D017A4B00F08992 /* LFTimePickerController.swift */,
+				C25209961D0179D000F08992 /* Main.storyboard */,
+				C25209991D0179D000F08992 /* Assets.xcassets */,
+				C252099B1D0179D000F08992 /* LaunchScreen.storyboard */,
+				C252099E1D0179D000F08992 /* Info.plist */,
+			);
+			path = LFTimePickerExample;
+			sourceTree = "<group>";
+		};
+		C25209A61D0179D100F08992 /* LFTimePickerExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				C25209A71D0179D100F08992 /* LFTimePickerExampleTests.swift */,
+				C25209A91D0179D100F08992 /* Info.plist */,
+			);
+			path = LFTimePickerExampleTests;
+			sourceTree = "<group>";
+		};
+		C25209B11D0179D100F08992 /* LFTimePickerExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C25209B21D0179D100F08992 /* LFTimePickerExampleUITests.swift */,
+				C25209B41D0179D100F08992 /* Info.plist */,
+			);
+			path = LFTimePickerExampleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C252098E1D0179D000F08992 /* LFTimePickerExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C25209B71D0179D100F08992 /* Build configuration list for PBXNativeTarget "LFTimePickerExample" */;
+			buildPhases = (
+				C252098B1D0179D000F08992 /* Sources */,
+				C252098C1D0179D000F08992 /* Frameworks */,
+				C252098D1D0179D000F08992 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LFTimePickerExample;
+			productName = LFTimePickerExample;
+			productReference = C252098F1D0179D000F08992 /* LFTimePickerExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C25209A21D0179D100F08992 /* LFTimePickerExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C25209BA1D0179D100F08992 /* Build configuration list for PBXNativeTarget "LFTimePickerExampleTests" */;
+			buildPhases = (
+				C252099F1D0179D100F08992 /* Sources */,
+				C25209A01D0179D100F08992 /* Frameworks */,
+				C25209A11D0179D100F08992 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C25209A51D0179D100F08992 /* PBXTargetDependency */,
+			);
+			name = LFTimePickerExampleTests;
+			productName = LFTimePickerExampleTests;
+			productReference = C25209A31D0179D100F08992 /* LFTimePickerExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C25209AD1D0179D100F08992 /* LFTimePickerExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C25209BD1D0179D100F08992 /* Build configuration list for PBXNativeTarget "LFTimePickerExampleUITests" */;
+			buildPhases = (
+				C25209AA1D0179D100F08992 /* Sources */,
+				C25209AB1D0179D100F08992 /* Frameworks */,
+				C25209AC1D0179D100F08992 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C25209B01D0179D100F08992 /* PBXTargetDependency */,
+			);
+			name = LFTimePickerExampleUITests;
+			productName = LFTimePickerExampleUITests;
+			productReference = C25209AE1D0179D100F08992 /* LFTimePickerExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C25209871D0179D000F08992 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Lucas Farah";
+				TargetAttributes = {
+					C252098E1D0179D000F08992 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					C25209A21D0179D100F08992 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = C252098E1D0179D000F08992;
+					};
+					C25209AD1D0179D100F08992 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = C252098E1D0179D000F08992;
+					};
+				};
+			};
+			buildConfigurationList = C252098A1D0179D000F08992 /* Build configuration list for PBXProject "LFTimePickerExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C25209861D0179D000F08992;
+			productRefGroup = C25209901D0179D000F08992 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C252098E1D0179D000F08992 /* LFTimePickerExample */,
+				C25209A21D0179D100F08992 /* LFTimePickerExampleTests */,
+				C25209AD1D0179D100F08992 /* LFTimePickerExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C252098D1D0179D000F08992 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C252099D1D0179D000F08992 /* LaunchScreen.storyboard in Resources */,
+				C252099A1D0179D000F08992 /* Assets.xcassets in Resources */,
+				C25209981D0179D000F08992 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C25209A11D0179D100F08992 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C25209AC1D0179D100F08992 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C252098B1D0179D000F08992 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C25209951D0179D000F08992 /* ExampleViewController.swift in Sources */,
+				C25209931D0179D000F08992 /* AppDelegate.swift in Sources */,
+				C25209C31D017A4B00F08992 /* LFTimePickerController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C252099F1D0179D100F08992 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C25209A81D0179D100F08992 /* LFTimePickerExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C25209AA1D0179D100F08992 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C25209B31D0179D100F08992 /* LFTimePickerExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C25209A51D0179D100F08992 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C252098E1D0179D000F08992 /* LFTimePickerExample */;
+			targetProxy = C25209A41D0179D100F08992 /* PBXContainerItemProxy */;
+		};
+		C25209B01D0179D100F08992 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C252098E1D0179D000F08992 /* LFTimePickerExample */;
+			targetProxy = C25209AF1D0179D100F08992 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C25209961D0179D000F08992 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C25209971D0179D000F08992 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C252099B1D0179D000F08992 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C252099C1D0179D000F08992 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C25209B51D0179D100F08992 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C25209B61D0179D100F08992 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C25209B81D0179D100F08992 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LFTimePickerExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = farah.lucas.LFTimePickerExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C25209B91D0179D100F08992 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LFTimePickerExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = farah.lucas.LFTimePickerExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C25209BB1D0179D100F08992 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LFTimePickerExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = farah.lucas.LFTimePickerExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LFTimePickerExample.app/LFTimePickerExample";
+			};
+			name = Debug;
+		};
+		C25209BC1D0179D100F08992 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LFTimePickerExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = farah.lucas.LFTimePickerExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LFTimePickerExample.app/LFTimePickerExample";
+			};
+			name = Release;
+		};
+		C25209BE1D0179D100F08992 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LFTimePickerExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = farah.lucas.LFTimePickerExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LFTimePickerExample;
+			};
+			name = Debug;
+		};
+		C25209BF1D0179D100F08992 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LFTimePickerExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = farah.lucas.LFTimePickerExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LFTimePickerExample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C252098A1D0179D000F08992 /* Build configuration list for PBXProject "LFTimePickerExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C25209B51D0179D100F08992 /* Debug */,
+				C25209B61D0179D100F08992 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C25209B71D0179D100F08992 /* Build configuration list for PBXNativeTarget "LFTimePickerExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C25209B81D0179D100F08992 /* Debug */,
+				C25209B91D0179D100F08992 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C25209BA1D0179D100F08992 /* Build configuration list for PBXNativeTarget "LFTimePickerExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C25209BB1D0179D100F08992 /* Debug */,
+				C25209BC1D0179D100F08992 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C25209BD1D0179D100F08992 /* Build configuration list for PBXNativeTarget "LFTimePickerExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C25209BE1D0179D100F08992 /* Debug */,
+				C25209BF1D0179D100F08992 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C25209871D0179D000F08992 /* Project object */;
+}

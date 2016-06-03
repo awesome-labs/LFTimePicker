@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:LFTimePicker.xcodeproj">
+      location = "self:LFTimePickerExample.xcodeproj">
    </FileRef>
 </Workspace>

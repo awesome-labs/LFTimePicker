@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  LFTimePicker
+//  LFTimePickerExample
 //
-//  Created by Lucas Farah on 6/1/16.
+//  Created by Lucas Farah on 6/3/16.
 //  Copyright © 2016 Lucas Farah. All rights reserved.
 //
 

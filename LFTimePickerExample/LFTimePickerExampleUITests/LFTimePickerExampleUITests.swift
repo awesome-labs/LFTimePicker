@@ -1,14 +1,14 @@
 //
-//  LFTimePickerUITests.swift
-//  LFTimePickerUITests
+//  LFTimePickerExampleUITests.swift
+//  LFTimePickerExampleUITests
 //
-//  Created by Lucas Farah on 6/1/16.
+//  Created by Lucas Farah on 6/3/16.
 //  Copyright © 2016 Lucas Farah. All rights reserved.
 //
 
 import XCTest
 
-class LFTimePickerUITests: XCTestCase {
+class LFTimePickerExampleUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
