@@ -49,7 +49,7 @@ Create a `Cartfile` that lists the framework and run `carthage bootstrap`. Follo
 github "yourUsername/yourlibrary"
 ```
 #### Manually
-1. Download and drop ```YourLibrary.swift``` in your project.  
+1. Download and drop ```LFTimePickerController.swift``` in your project.  
 2. Congratulations!  
 
 ## Usage example
@@ -65,13 +65,12 @@ self.navigationController?.pushViewController(timePicker, animated: true)
 //3. Implement the LFTimePickerControllerDelegate
 extension ExampleViewController: LFTimePickerControllerDelegate {
 
-	func didFinishTask(start: String, end: String) {
+	func didPickTime(start: String, end: String) {
 
 		print(start)
 		print(end)
 	}
 }
-
 ```
 
 ## Release History
