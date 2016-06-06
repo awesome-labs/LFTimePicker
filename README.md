@@ -49,6 +49,18 @@ Create a `Cartfile` that lists the framework and run `carthage bootstrap`. Follo
 ```
 github "awesome-labs/LFTimePicker"
 ```
+
+#### Swift Package Manager
+Add this project on your `Package.swift`
+
+```swift
+import PackageDescription
+
+let package = Package(
+  name: "LFTimePicker"
+)
+```
+
 #### Manually
 1. Download and drop ```LFTimePickerController.swift``` in your project.  
 2. Congratulations!  
