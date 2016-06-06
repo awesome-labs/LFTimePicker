@@ -76,6 +76,8 @@ extension ExampleViewController: LFTimePickerControllerDelegate {
 
 ## Release History
 
+* 0.0.3
+    * Carthage and SPM available
 * 0.0.2
     * CocoaPods available
 * 0.0.1
