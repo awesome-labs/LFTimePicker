@@ -30,7 +30,7 @@
 		C25209D81D017AFC00F08992 /* LFTimePickerFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LFTimePickerFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C25209DD1D017AFC00F08992 /* LFTimePickerFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFTimePickerFrameworkTests.swift; sourceTree = "<group>"; };
 		C25209DF1D017AFC00F08992 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2D870DD1D017C750064B47C /* LFTimePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LFTimePickerController.swift; path = ../../LFTimePickerController.swift; sourceTree = "<group>"; };
+		C2D870DD1D017C750064B47C /* LFTimePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTimePickerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,8 @@
 				C2D870DD1D017C750064B47C /* LFTimePickerController.swift */,
 				C25209D31D017AFC00F08992 /* Info.plist */,
 			);
-			path = LFTimePickerFramework;
+			name = LFTimePickerFramework;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		C25209DC1D017AFC00F08992 /* LFTimePickerFrameworkTests */ = {
@@ -86,7 +87,8 @@
 				C25209DD1D017AFC00F08992 /* LFTimePickerFrameworkTests.swift */,
 				C25209DF1D017AFC00F08992 /* Info.plist */,
 			);
-			path = LFTimePickerFrameworkTests;
+			name = LFTimePickerFrameworkTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,7 +159,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C25209C81D017AFC00F08992 /* Build configuration list for PBXProject "LFTimePickerFramework" */;
+			buildConfigurationList = C25209C81D017AFC00F08992 /* Build configuration list for PBXProject "LFTimePicker" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -319,7 +321,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LFTimePickerFramework/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = farah.lucas.LFTimePickerFramework;
@@ -337,7 +339,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LFTimePickerFramework/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = farah.lucas.LFTimePickerFramework;
@@ -349,7 +351,7 @@
 		C25209E61D017AFC00F08992 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = LFTimePickerFrameworkTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = farah.lucas.LFTimePickerFrameworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -359,7 +361,7 @@
 		C25209E71D017AFC00F08992 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = LFTimePickerFrameworkTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = farah.lucas.LFTimePickerFrameworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -369,7 +371,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C25209C81D017AFC00F08992 /* Build configuration list for PBXProject "LFTimePickerFramework" */ = {
+		C25209C81D017AFC00F08992 /* Build configuration list for PBXProject "LFTimePicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C25209E01D017AFC00F08992 /* Debug */,
