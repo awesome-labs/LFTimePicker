@@ -17,7 +17,7 @@
                BlueprintIdentifier = "C25209CD1D017AFC00F08992"
                BuildableName = "LFTimePickerFramework.framework"
                BlueprintName = "LFTimePickerFramework"
-               ReferencedContainer = "container:LFTimePickerFramework.xcodeproj">
+               ReferencedContainer = "container:LFTimePicker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "C25209D71D017AFC00F08992"
                BuildableName = "LFTimePickerFrameworkTests.xctest"
                BlueprintName = "LFTimePickerFrameworkTests"
-               ReferencedContainer = "container:LFTimePickerFramework.xcodeproj">
+               ReferencedContainer = "container:LFTimePicker.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "C25209CD1D017AFC00F08992"
             BuildableName = "LFTimePickerFramework.framework"
             BlueprintName = "LFTimePickerFramework"
-            ReferencedContainer = "container:LFTimePickerFramework.xcodeproj">
+            ReferencedContainer = "container:LFTimePicker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -67,7 +67,7 @@
             BlueprintIdentifier = "C25209CD1D017AFC00F08992"
             BuildableName = "LFTimePickerFramework.framework"
             BlueprintName = "LFTimePickerFramework"
-            ReferencedContainer = "container:LFTimePickerFramework.xcodeproj">
+            ReferencedContainer = "container:LFTimePicker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -85,7 +85,7 @@
             BlueprintIdentifier = "C25209CD1D017AFC00F08992"
             BuildableName = "LFTimePickerFramework.framework"
             BlueprintName = "LFTimePickerFramework"
-            ReferencedContainer = "container:LFTimePickerFramework.xcodeproj">
+            ReferencedContainer = "container:LFTimePicker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
