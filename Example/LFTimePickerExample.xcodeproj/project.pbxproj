@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C235C87C1D08DE11004D30EF /* LFTimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C235C87B1D08DE11004D30EF /* LFTimePickerController.swift */; };
 		C25209931D0179D000F08992 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25209921D0179D000F08992 /* AppDelegate.swift */; };
 		C25209951D0179D000F08992 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25209941D0179D000F08992 /* ExampleViewController.swift */; };
 		C25209981D0179D000F08992 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C25209961D0179D000F08992 /* Main.storyboard */; };
@@ -14,7 +15,6 @@
 		C252099D1D0179D000F08992 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C252099B1D0179D000F08992 /* LaunchScreen.storyboard */; };
 		C25209A81D0179D100F08992 /* LFTimePickerExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25209A71D0179D100F08992 /* LFTimePickerExampleTests.swift */; };
 		C25209B31D0179D100F08992 /* LFTimePickerExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25209B21D0179D100F08992 /* LFTimePickerExampleUITests.swift */; };
-		C2D870E01D017C9D0064B47C /* LFTimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D870DF1D017C9D0064B47C /* LFTimePickerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C235C87B1D08DE11004D30EF /* LFTimePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LFTimePickerController.swift; path = ../../Sources/LFTimePickerController.swift; sourceTree = "<group>"; };
 		C252098F1D0179D000F08992 /* LFTimePickerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LFTimePickerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C25209921D0179D000F08992 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C25209941D0179D000F08992 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		C25209AE1D0179D100F08992 /* LFTimePickerExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LFTimePickerExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C25209B21D0179D100F08992 /* LFTimePickerExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFTimePickerExampleUITests.swift; sourceTree = "<group>"; };
 		C25209B41D0179D100F08992 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2D870DF1D017C9D0064B47C /* LFTimePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LFTimePickerController.swift; path = ../../LFTimePickerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,7 @@
 			children = (
 				C25209921D0179D000F08992 /* AppDelegate.swift */,
 				C25209941D0179D000F08992 /* ExampleViewController.swift */,
-				C2D870DF1D017C9D0064B47C /* LFTimePickerController.swift */,
+				C235C87B1D08DE11004D30EF /* LFTimePickerController.swift */,
 				C25209961D0179D000F08992 /* Main.storyboard */,
 				C25209991D0179D000F08992 /* Assets.xcassets */,
 				C252099B1D0179D000F08992 /* LaunchScreen.storyboard */,
@@ -261,7 +261,7 @@
 			files = (
 				C25209951D0179D000F08992 /* ExampleViewController.swift in Sources */,
 				C25209931D0179D000F08992 /* AppDelegate.swift in Sources */,
-				C2D870E01D017C9D0064B47C /* LFTimePickerController.swift in Sources */,
+				C235C87C1D08DE11004D30EF /* LFTimePickerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

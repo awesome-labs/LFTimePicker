@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import LFTimePickerFramework
+@testable import LFTimePicker
 
 class LFTimePickerFrameworkTests: XCTestCase {
     
