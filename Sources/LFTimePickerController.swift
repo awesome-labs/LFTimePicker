@@ -28,14 +28,14 @@ public class LFTimePickerController: UIViewController {
 	var lblAMPM = UILabel()
 	var lblAMPM2 = UILabel()
 
-	enum TimeType {
+	public enum TimeType {
 
 		case hour12
 		case hour24
 	}
 
 	/// Hour Format: 12h (default) or 24h format
-	var timeType = TimeType.hour12
+	public var timeType = TimeType.hour12
 
 	// MARK: - Methods
 	override public func viewDidLoad() {
