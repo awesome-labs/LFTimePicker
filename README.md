@@ -88,6 +88,8 @@ extension ExampleViewController: LFTimePickerControllerDelegate {
 
 ## Release History
 
+* 0.1.0
+    * Added 12h and 24h formats
 * 0.0.3
     * Carthage and SPM available
 * 0.0.2
