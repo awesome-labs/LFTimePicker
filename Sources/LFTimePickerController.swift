@@ -28,6 +28,15 @@ public class LFTimePickerController: UIViewController {
 	var lblAMPM = UILabel()
 	var lblAMPM2 = UILabel()
 
+	enum TimeType {
+
+		case hour12
+		case hour24
+	}
+
+	/// Hour Format: 12h (default) or 24h format
+	var timeType = TimeType.hour12
+
 	// MARK: - Methods
 	override public func viewDidLoad() {
 		super.viewDidLoad()
@@ -36,11 +45,12 @@ public class LFTimePickerController: UIViewController {
 		self.title = "Change Time"
 		self.view.backgroundColor = UIColor(red: 255 / 255, green: 128 / 255, blue: 0, alpha: 1)
 
-		setupTimeArray()
 		setupTables()
 		setupDetailView()
 		setupBottomDetail()
 		setupNavigationBar()
+		setupTime()
+
 	}
 
 	override public func didReceiveMemoryWarning() {
@@ -156,7 +166,24 @@ public class LFTimePickerController: UIViewController {
 		self.view.addSubview(bottomDetailMainShade)
 	}
 
-	public func setupTimeArray() {
+	public func setupTime() {
+
+		switch timeType {
+
+		case TimeType.hour12:
+			setupTimeArray12()
+			break
+
+		case TimeType.hour24:
+			setupTimeArray24()
+			break
+		}
+	}
+
+	public func setupTimeArray12() {
+
+		lblAMPM.hidden = false
+		lblAMPM2.hidden = false
 
 		for _ in 0...8 {
 			arr.append("")
@@ -181,13 +208,45 @@ public class LFTimePickerController: UIViewController {
 		}
 	}
 
+	public func setupTimeArray24() {
+
+		lblAMPM.hidden = true
+		lblAMPM2.hidden = true
+
+		for _ in 0...8 {
+			arr.append("")
+		}
+
+		for i in 0...23 {
+			for x in 0 ..< 4 {
+
+				if x == 0 {
+					arr.append("\(i):00")
+				} else {
+					arr.append("\(i):\(x * 15)")
+				}
+			}
+			table.reloadData()
+		}
+
+		for _ in 0...8 {
+			arr.append("")
+		}
+	}
+
 	// MARK: Button Methods
 	func butSave() {
 
 		let time = self.lblDetail.text!
 		let time2 = self.lblDetail2.text!
 
-		delegate?.didPickTime(time + " \(self.lblAMPM.text!)", end: time2 + " \(self.lblAMPM2.text!)")
+		if timeType == .hour12 {
+
+			delegate?.didPickTime(time + " \(self.lblAMPM.text!)", end: time2 + " \(self.lblAMPM2.text!)")
+		} else {
+
+			delegate?.didPickTime(time, end: time2)
+		}
 
 		self.navigationController?.popViewControllerAnimated(true)
 	}
