@@ -6,6 +6,11 @@
 //  Copyright © 2016 Lucas Farah. All rights reserved.
 //
 
+// swiftlint:disable trailing_whitespace
+// swiftlint:disable line_length
+
+
+
 import XCTest
 @testable import LFTimePickerExample
 

@@ -24,7 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C25209CE1D017AFC00F08992 /* LFTimePickerFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LFTimePickerFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C25209CE1D017AFC00F08992 /* LFTimePickerFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LFTimePickerFramework.framework; path = LFTimePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C25209D11D017AFC00F08992 /* LFTimePickerFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFTimePickerFramework.h; sourceTree = "<group>"; };
 		C25209D31D017AFC00F08992 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C25209D81D017AFC00F08992 /* LFTimePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LFTimePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +130,7 @@
 				C25209D41D017AFC00F08992 /* Sources */,
 				C25209D51D017AFC00F08992 /* Frameworks */,
 				C25209D61D017AFC00F08992 /* Resources */,
+				C235C88C1D094CC7004D30EF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -193,6 +194,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C235C88C1D094CC7004D30EF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C25209C91D017AFC00F08992 /* Sources */ = {

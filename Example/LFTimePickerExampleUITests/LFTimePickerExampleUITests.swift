@@ -5,6 +5,8 @@
 //  Created by Lucas Farah on 6/3/16.
 //  Copyright © 2016 Lucas Farah. All rights reserved.
 //
+// swiftlint:disable line_length
+// swiftlint:disable trailing_whitespace
 
 import XCTest
 
@@ -26,11 +28,6 @@ class LFTimePickerExampleUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-    }
-    
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
 }
