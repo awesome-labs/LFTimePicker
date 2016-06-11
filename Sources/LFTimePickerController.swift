@@ -27,6 +27,7 @@ public class LFTimePickerController: UIViewController {
 	var detailBackgroundView = UIView()
 	var lblAMPM = UILabel()
 	var lblAMPM2 = UILabel()
+	var firstRowIndex = 0
 
 	public enum TimeType {
 
@@ -280,7 +281,6 @@ extension LFTimePickerController: UITableViewDataSource {
 		cell.backgroundColor = .clearColor()
 		return cell
 	}
-
 }
 
 //MARK: - UITableViewDelegate
@@ -309,13 +309,47 @@ extension LFTimePickerController: UITableViewDelegate {
 			let text = table.visibleCells[8]
 			let text2 = table2.visibleCells[8]
 
-			if text.textLabel?.text != "" {
-				self.lblDetail.text = text.textLabel?.text
+			if firstRowIndex != table.indexPathsForVisibleRows?.first?.row {
+
+				UIView.animateWithDuration(0.3, animations: {
+					self.lblDetail.center = CGPointMake(60, -5)
+					self.lblDetail.alpha = 0
+					}, completion: { (completed) in
+
+					self.lblDetail.center = CGPointMake(60, 130)
+					if text.textLabel?.text != "" {
+						self.lblDetail.text = text.textLabel?.text
+					}
+
+					UIView.animateWithDuration(0.3, animations: {
+
+						self.lblDetail.center = CGPointMake(60, self.detailBackgroundView.frame.height / 2)
+						self.lblDetail.alpha = 1
+					})
+
+				})
 			}
 
 			if text2.textLabel?.text != "" {
 				self.lblDetail2.text = text2.textLabel?.text
 			}
+
 		}
+
+		firstRowIndex = (table.indexPathsForVisibleRows?.first?.row)!
+
+	}
+}
+
+//Got from EZSwiftExtensions
+extension NSTimer {
+
+	public static func runThisAfterDelay(seconds seconds: Double, after: () -> ()) {
+		runThisAfterDelay(seconds: seconds, queue: dispatch_get_main_queue(), after: after)
+	}
+
+	public static func runThisAfterDelay(seconds seconds: Double, queue: dispatch_queue_t, after: () -> ()) {
+		let time = dispatch_time(DISPATCH_TIME_NOW, Int64(seconds * Double(NSEC_PER_SEC)))
+		dispatch_after(time, queue, after)
 	}
 }
