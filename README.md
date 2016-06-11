@@ -14,11 +14,7 @@ One to two paragraph statement about your product and what it does.
 
 ## Features
 
-- [x] Feature 1
-- [x] Feature 2
-- [x] Feature 3
-- [x] Feature 4
-- [x] Feature 5
+- [x] 12h and 24h formats
 
 ## Requirements
 
