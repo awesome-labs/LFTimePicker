@@ -12,7 +12,7 @@ import UIKit
 public protocol LFTimePickerDelegate: class {
 
 	/// LFTimePickerController: Called after pressing save. Format: hh:mm aa
-	func didPickTime(start: String, end: String)
+	func didPickTime(_ start: String, end: String)
 }
 
 public class LFTimePickerController: UIViewController {
@@ -57,16 +57,17 @@ public class LFTimePickerController: UIViewController {
 	override public func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
+    
 	}
 
 	// MARK: Setup
 	public func setupNavigationBar() {
 
-		let saveButton = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: #selector(butSave))
-		saveButton.tintColor = .redColor()
+		let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(butSave))
+		saveButton.tintColor = .red()
 
-		let cancelButton = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: #selector(butCancel))
-		cancelButton.tintColor = .redColor()
+		let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(butCancel))
+		cancelButton.tintColor = .red()
 
 		self.navigationItem.rightBarButtonItem = saveButton
 		self.navigationItem.leftBarButtonItem = cancelButton
@@ -75,25 +76,25 @@ public class LFTimePickerController: UIViewController {
 	public func setupTables() {
 
 		let frame1 = CGRect(x: 30, y: 0, width: 100, height: self.view.bounds.height)
-		table = UITableView(frame: frame1, style: .Plain)
+		table = UITableView(frame: frame1, style: .plain)
 
 		let frame2 = CGRect(x: self.view.frame.width - 100, y: 0, width: 100, height: self.view.bounds.height)
 
-		table2 = UITableView(frame: frame2, style: .Plain)
+		table2 = UITableView(frame: frame2, style: .plain)
 
-		table.separatorStyle = .None
-		table2.separatorStyle = .None
+		table.separatorStyle = .none
+		table2.separatorStyle = .none
 
 		table.dataSource = self
 		table.delegate = self
 		table2.dataSource = self
 		table2.delegate = self
 
-		table.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-		table2.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+		table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+		table2.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
-		table.backgroundColor = .clearColor()
-		table2.backgroundColor = .clearColor()
+		table.backgroundColor = .clear()
+		table2.backgroundColor = .clear()
 
 		table.showsVerticalScrollIndicator = false
 		table2.showsVerticalScrollIndicator = false
@@ -104,28 +105,28 @@ public class LFTimePickerController: UIViewController {
 		view.addSubview(table)
 		view.addSubview(table2)
 
-		self.view.sendSubviewToBack(table)
-		self.view.sendSubviewToBack(table2)
+		self.view.sendSubview(toBack: table)
+		self.view.sendSubview(toBack: table2)
 	}
 
 	public func setupDetailView() {
 
 		detailBackgroundView = UIView(frame: CGRect(x: 0, y: (self.view.bounds.height / 5) * 2, width: self.view.bounds.width, height: self.view.bounds.height / 6))
-		detailBackgroundView.backgroundColor = .whiteColor()
+		detailBackgroundView.backgroundColor = .white()
 
 		lblDetail = UILabel(frame: CGRect(x: 20, y: detailBackgroundView.frame.height / 2, width: 110, height: detailBackgroundView.frame.height))
-		lblDetail.center = CGPointMake(60, detailBackgroundView.frame.height / 2)
+		lblDetail.center = CGPoint(x: 60, y: detailBackgroundView.frame.height / 2)
 
-		lblDetail.font = UIFont.systemFontOfSize(40)
+		lblDetail.font = UIFont.systemFont(ofSize: 40)
 		lblDetail.text = "11:11"
-		lblDetail.textAlignment = .Center
+		lblDetail.textAlignment = .center
 
 		lblDetail2 = UILabel(frame: CGRect(x: detailBackgroundView.frame.width / 7 * 6 + 20, y: detailBackgroundView.frame.height / 2, width: 110, height: detailBackgroundView.frame.height))
-		lblDetail2.center = CGPointMake(detailBackgroundView.bounds.width - 60, detailBackgroundView.frame.height / 2)
+		lblDetail2.center = CGPoint(x: detailBackgroundView.bounds.width - 60, y: detailBackgroundView.frame.height / 2)
 
-		lblDetail2.font = UIFont.systemFontOfSize(40)
+		lblDetail2.font = UIFont.systemFont(ofSize: 40)
 		lblDetail2.text = "11:11"
-		lblDetail2.textAlignment = .Center
+		lblDetail2.textAlignment = .center
 
 		detailBackgroundView.addSubview(lblDetail)
 		detailBackgroundView.addSubview(lblDetail2)
@@ -147,18 +148,18 @@ public class LFTimePickerController: UIViewController {
 		bottomDetailMainShade.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.6)
 
 		lblAMPM = UILabel(frame: CGRect(x: 20, y: bottomDetailMainShade.frame.height / 2, width: 110, height: bottomDetailMainShade.frame.height))
-		lblAMPM.center = CGPointMake(60, bottomDetailMainShade.frame.height / 2)
+		lblAMPM.center = CGPoint(x: 60, y: bottomDetailMainShade.frame.height / 2)
 
-		lblAMPM.font = UIFont.systemFontOfSize(15)
+		lblAMPM.font = UIFont.systemFont(ofSize: 15)
 		lblAMPM.text = "AM"
-		lblAMPM.textAlignment = .Center
+		lblAMPM.textAlignment = .center
 
 		lblAMPM2 = UILabel(frame: CGRect(x: bottomDetailMainShade.frame.width / 7 * 6 + 20, y: bottomDetailMainShade.frame.height / 2, width: 110, height: bottomDetailMainShade.frame.height))
-		lblAMPM2.center = CGPointMake(bottomDetailMainShade.bounds.width - 60, bottomDetailMainShade.frame.height / 2)
+		lblAMPM2.center = CGPoint(x: bottomDetailMainShade.bounds.width - 60, y: bottomDetailMainShade.frame.height / 2)
 
-		lblAMPM2.font = UIFont.systemFontOfSize(15)
+		lblAMPM2.font = UIFont.systemFont(ofSize: 15)
 		lblAMPM2.text = "AM"
-		lblAMPM2.textAlignment = .Center
+		lblAMPM2.textAlignment = .center
 
 		bottomDetailMainShade.addSubview(lblAMPM)
 		bottomDetailMainShade.addSubview(lblAMPM2)
@@ -183,8 +184,8 @@ public class LFTimePickerController: UIViewController {
 
 	public func setupTimeArray12() {
 
-		lblAMPM.hidden = false
-		lblAMPM2.hidden = false
+		lblAMPM.isHidden = false
+		lblAMPM2.isHidden = false
 
 		for _ in 0...8 {
 			arr.append("")
@@ -211,8 +212,8 @@ public class LFTimePickerController: UIViewController {
 
 	public func setupTimeArray24() {
 
-		lblAMPM.hidden = true
-		lblAMPM2.hidden = true
+		lblAMPM.isHidden = true
+		lblAMPM2.isHidden = true
 
 		for _ in 0...8 {
 			arr.append("")
@@ -249,48 +250,48 @@ public class LFTimePickerController: UIViewController {
 			delegate?.didPickTime(time, end: time2)
 		}
 
-		self.navigationController?.popViewControllerAnimated(true)
+    _ = self.navigationController?.popViewController(animated: true)
 	}
 
 	func butCancel() {
 
-		self.navigationController?.popViewControllerAnimated(true)
+		_ = self.navigationController?.popViewController(animated: true)
 	}
 }
 
 //MARK: - UITableViewDataSource
 extension LFTimePickerController: UITableViewDataSource {
 
-	public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+	public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
 	{
 		return arr.count
 	}
 
-	public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+	public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
 	{
-		var cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell!
+		var cell = tableView.dequeueReusableCell(withIdentifier: "cell") as UITableViewCell!
 		if !(cell != nil)
 		{
-			cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
+			cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
 		}
 
 		// setup cell without force unwrapping it
-		cell.textLabel!.text = arr[indexPath.row]
-		cell.textLabel?.textColor = .whiteColor()
+		cell?.textLabel!.text = arr[(indexPath as NSIndexPath).row]
+		cell?.textLabel?.textColor = .white()
 
-		cell.backgroundColor = .clearColor()
-		return cell
+		cell?.backgroundColor = .clear()
+		return cell!
 	}
 }
 
 //MARK: - UITableViewDelegate
 extension LFTimePickerController: UITableViewDelegate {
 
-	public func scrollViewDidScroll(scrollView: UIScrollView) {
+	public func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
 		if table.visibleCells.count > 8 && table2.visibleCells.count > 8 {
 
-			if table.indexPathsForVisibleRows?.first?.row < 48 {
+			if (table.indexPathsForVisibleRows?.first as NSIndexPath?)?.row < 48 {
 
 				self.lblAMPM.text = "AM"
 			} else {
@@ -298,7 +299,7 @@ extension LFTimePickerController: UITableViewDelegate {
 				self.lblAMPM.text = "PM"
 			}
 
-			if table2.indexPathsForVisibleRows?.first?.row < 48 {
+			if (table2.indexPathsForVisibleRows?.first as NSIndexPath?)?.row < 48 {
 
 				self.lblAMPM2.text = "AM"
 			} else {
@@ -309,21 +310,21 @@ extension LFTimePickerController: UITableViewDelegate {
 			let text = table.visibleCells[8]
 			let text2 = table2.visibleCells[8]
 
-			if firstRowIndex != table.indexPathsForVisibleRows?.first?.row {
+			if firstRowIndex != (table.indexPathsForVisibleRows?.first as NSIndexPath?)?.row {
 
-				UIView.animateWithDuration(0.3, animations: {
-					self.lblDetail.center = CGPointMake(60, -5)
+				UIView.animate(withDuration: 0.3, animations: {
+					self.lblDetail.center = CGPoint(x: 60, y: -5)
 					self.lblDetail.alpha = 0
 					}, completion: { (completed) in
 
-					self.lblDetail.center = CGPointMake(60, 130)
+					self.lblDetail.center = CGPoint(x: 60, y: 130)
 					if text.textLabel?.text != "" {
 						self.lblDetail.text = text.textLabel?.text
 					}
 
-					UIView.animateWithDuration(0.3, animations: {
+					UIView.animate(withDuration: 0.3, animations: {
 
-						self.lblDetail.center = CGPointMake(60, self.detailBackgroundView.frame.height / 2)
+						self.lblDetail.center = CGPoint(x: 60, y: self.detailBackgroundView.frame.height / 2)
 						self.lblDetail.alpha = 1
 					})
 
@@ -336,20 +337,21 @@ extension LFTimePickerController: UITableViewDelegate {
 
 		}
 
-		firstRowIndex = (table.indexPathsForVisibleRows?.first?.row)!
+		firstRowIndex = ((table.indexPathsForVisibleRows?.first as NSIndexPath?)?.row)!
 
 	}
 }
 
 //Got from EZSwiftExtensions
-extension NSTimer {
+extension Timer {
 
-	public static func runThisAfterDelay(seconds seconds: Double, after: () -> ()) {
-		runThisAfterDelay(seconds: seconds, queue: dispatch_get_main_queue(), after: after)
+	public static func runThisAfterDelay(seconds: Double, after: () -> ()) {
+		runThisAfterDelay(seconds: seconds, queue: DispatchQueue.main, after: after)
 	}
 
-	public static func runThisAfterDelay(seconds seconds: Double, queue: dispatch_queue_t, after: () -> ()) {
-		let time = dispatch_time(DISPATCH_TIME_NOW, Int64(seconds * Double(NSEC_PER_SEC)))
-		dispatch_after(time, queue, after)
+	public static func runThisAfterDelay(seconds: Double, queue: DispatchQueue, after: () -> ()) {
+		let time = DispatchTime.now() + Double(Int64(seconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+    
+		queue.after(when: time, execute: after)
 	}
 }

@@ -27,7 +27,7 @@ class ExampleViewController: UIViewController {
     timePicker.delegate = self
   }
   
-  @IBAction func butShowTime(sender: AnyObject) {
+  @IBAction func butShowTime(_ sender: AnyObject) {
     
     self.navigationController?.pushViewController(timePicker, animated: true)
   }
@@ -41,7 +41,7 @@ class ExampleViewController: UIViewController {
 //MARK: - LFTimePickerDelegate
 extension ExampleViewController: LFTimePickerDelegate {
   
-  func didPickTime(start: String, end: String) {
+  func didPickTime(_ start: String, end: String) {
     self.lblStartSelectedTime.text = start
     
     self.lblFinishSelectedTime.text = end
