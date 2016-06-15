@@ -44,7 +44,7 @@ public class LFTimePickerController: UIViewController {
 		// Do any additional setup after loading the view, typically from a nib.
 
 		self.title = "Change Time"
-		self.view.backgroundColor = UIColor(red: 255 / 255, green: 128 / 255, blue: 0, alpha: 1)
+		self.view.backgroundColor = #colorLiteral(red: 1, green: 0.5019607843, blue: 0, alpha: 1)
 
 		setupTables()
 		setupDetailView()
@@ -64,10 +64,10 @@ public class LFTimePickerController: UIViewController {
 	public func setupNavigationBar() {
 
 		let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(butSave))
-		saveButton.tintColor = .red()
+		saveButton.tintColor = #colorLiteral(red: 0.8949507475, green: 0.1438436359, blue: 0.08480125666, alpha: 1)
 
 		let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(butCancel))
-		cancelButton.tintColor = .red()
+		cancelButton.tintColor = #colorLiteral(red: 0.8949507475, green: 0.1438436359, blue: 0.08480125666, alpha: 1)
 
 		self.navigationItem.rightBarButtonItem = saveButton
 		self.navigationItem.leftBarButtonItem = cancelButton
@@ -112,7 +112,7 @@ public class LFTimePickerController: UIViewController {
 	public func setupDetailView() {
 
 		detailBackgroundView = UIView(frame: CGRect(x: 0, y: (self.view.bounds.height / 5) * 2, width: self.view.bounds.width, height: self.view.bounds.height / 6))
-		detailBackgroundView.backgroundColor = .white()
+		detailBackgroundView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 
 		lblDetail = UILabel(frame: CGRect(x: 20, y: detailBackgroundView.frame.height / 2, width: 110, height: detailBackgroundView.frame.height))
 		lblDetail.center = CGPoint(x: 60, y: detailBackgroundView.frame.height / 2)
@@ -142,10 +142,11 @@ public class LFTimePickerController: UIViewController {
 	public func setupBottomDetail() {
 
 		let bottomDetailMainBackground = UIView(frame: CGRect(x: 0, y: self.detailBackgroundView.frame.maxY, width: self.view.frame.width, height: 38))
-		bottomDetailMainBackground.backgroundColor = UIColor(red: 255 / 255, green: 128 / 255, blue: 0, alpha: 1)
-
+		bottomDetailMainBackground.backgroundColor = #colorLiteral(red: 1, green: 0.5019607843, blue: 0, alpha: 1)
+    
 		let bottomDetailMainShade = UIView(frame: CGRect(x: 0, y: self.detailBackgroundView.frame.maxY, width: self.view.frame.width, height: 38))
-		bottomDetailMainShade.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.6)
+		bottomDetailMainShade.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.6)
+      
 
 		lblAMPM = UILabel(frame: CGRect(x: 20, y: bottomDetailMainShade.frame.height / 2, width: 110, height: bottomDetailMainShade.frame.height))
 		lblAMPM.center = CGPoint(x: 60, y: bottomDetailMainShade.frame.height / 2)
@@ -309,27 +310,29 @@ extension LFTimePickerController: UITableViewDelegate {
 
 			let text = table.visibleCells[8]
 			let text2 = table2.visibleCells[8]
+      self.lblDetail.text = text.textLabel?.text
+      self.lblDetail2.text = text2.textLabel?.text
 
-			if firstRowIndex != (table.indexPathsForVisibleRows?.first as NSIndexPath?)?.row {
-
-				UIView.animate(withDuration: 0.3, animations: {
-					self.lblDetail.center = CGPoint(x: 60, y: -5)
-					self.lblDetail.alpha = 0
-					}, completion: { (completed) in
-
-					self.lblDetail.center = CGPoint(x: 60, y: 130)
-					if text.textLabel?.text != "" {
-						self.lblDetail.text = text.textLabel?.text
-					}
-
-					UIView.animate(withDuration: 0.3, animations: {
-
-						self.lblDetail.center = CGPoint(x: 60, y: self.detailBackgroundView.frame.height / 2)
-						self.lblDetail.alpha = 1
-					})
-
-				})
-			}
+//			if firstRowIndex != (table.indexPathsForVisibleRows?.first as NSIndexPath?)?.row {
+//
+//				UIView.animate(withDuration: 0.3, animations: {
+//					self.lblDetail.center = CGPoint(x: 60, y: -5)
+//					self.lblDetail.alpha = 0
+//					}, completion: { (completed) in
+//
+//					self.lblDetail.center = CGPoint(x: 60, y: 130)
+//					if text.textLabel?.text != "" {
+//						self.lblDetail.text = text.textLabel?.text
+//					}
+//
+//					UIView.animate(withDuration: 0.3, animations: {
+//
+//						self.lblDetail.center = CGPoint(x: 60, y: self.detailBackgroundView.frame.height / 2)
+//						self.lblDetail.alpha = 1
+//					})
+//
+//				})
+//			}
 
 			if text2.textLabel?.text != "" {
 				self.lblDetail2.text = text2.textLabel?.text
