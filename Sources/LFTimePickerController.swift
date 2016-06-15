@@ -308,27 +308,28 @@ extension LFTimePickerController: UITableViewDelegate {
 
 			let text = table.visibleCells[8]
 			let text2 = table2.visibleCells[8]
+      self.lblDetail.text = text.textLabel?.text
 
-			if firstRowIndex != table.indexPathsForVisibleRows?.first?.row {
-
-				UIView.animateWithDuration(0.3, animations: {
-					self.lblDetail.center = CGPointMake(60, -5)
-					self.lblDetail.alpha = 0
-					}, completion: { (completed) in
-
-					self.lblDetail.center = CGPointMake(60, 130)
-					if text.textLabel?.text != "" {
-						self.lblDetail.text = text.textLabel?.text
-					}
-
-					UIView.animateWithDuration(0.3, animations: {
-
-						self.lblDetail.center = CGPointMake(60, self.detailBackgroundView.frame.height / 2)
-						self.lblDetail.alpha = 1
-					})
-
-				})
-			}
+//			if firstRowIndex != table.indexPathsForVisibleRows?.first?.row {
+//
+//				UIView.animateWithDuration(0.3, animations: {
+//					self.lblDetail.center = CGPointMake(60, -5)
+//					self.lblDetail.alpha = 0
+//					}, completion: { (completed) in
+//
+//					self.lblDetail.center = CGPointMake(60, 130)
+//					if text.textLabel?.text != "" {
+//						self.lblDetail.text = text.textLabel?.text
+//					}
+//
+//					UIView.animateWithDuration(0.3, animations: {
+//
+//						self.lblDetail.center = CGPointMake(60, self.detailBackgroundView.frame.height / 2)
+//						self.lblDetail.alpha = 1
+//					})
+//
+//				})
+//			}
 
 			if text2.textLabel?.text != "" {
 				self.lblDetail2.text = text2.textLabel?.text
