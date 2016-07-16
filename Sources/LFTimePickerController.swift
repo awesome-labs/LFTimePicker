@@ -19,7 +19,9 @@ public class LFTimePickerController: UIViewController {
 
 	// MARK: - Variables
 	public weak var delegate: LFTimePickerDelegate?
-	var arr: [String] = []
+	var startTimes: [String] = []
+	var endTimes: [String] = []
+
 	var table = UITableView()
 	var table2 = UITableView()
 	var lblDetail = UILabel()
@@ -29,10 +31,17 @@ public class LFTimePickerController: UIViewController {
 	var lblAMPM2 = UILabel()
 	var firstRowIndex = 0
 
+	var isCustomTime = false
 	public enum TimeType {
 
 		case hour12
 		case hour24
+	}
+
+	public enum Time {
+
+		case startTime
+		case endTime
 	}
 
 	/// Hour Format: 12h (default) or 24h format
@@ -51,7 +60,6 @@ public class LFTimePickerController: UIViewController {
 		setupBottomDetail()
 		setupNavigationBar()
 		setupTime()
-
 	}
 
 	override public func didReceiveMemoryWarning() {
@@ -117,14 +125,14 @@ public class LFTimePickerController: UIViewController {
 		lblDetail.center = CGPointMake(60, detailBackgroundView.frame.height / 2)
 
 		lblDetail.font = UIFont.systemFontOfSize(40)
-		lblDetail.text = "11:11"
+		lblDetail.text = "00:00"
 		lblDetail.textAlignment = .Center
 
 		lblDetail2 = UILabel(frame: CGRect(x: detailBackgroundView.frame.width / 7 * 6 + 20, y: detailBackgroundView.frame.height / 2, width: 110, height: detailBackgroundView.frame.height))
 		lblDetail2.center = CGPointMake(detailBackgroundView.bounds.width - 60, detailBackgroundView.frame.height / 2)
 
 		lblDetail2.font = UIFont.systemFontOfSize(40)
-		lblDetail2.text = "11:11"
+		lblDetail2.text = "00:00"
 		lblDetail2.textAlignment = .Center
 
 		detailBackgroundView.addSubview(lblDetail)
@@ -169,22 +177,34 @@ public class LFTimePickerController: UIViewController {
 
 	public func setupTime() {
 
-		switch timeType {
+		if !isCustomTime {
 
-		case TimeType.hour12:
-			setupTimeArray12()
-			break
+			switch timeType {
 
-		case TimeType.hour24:
-			setupTimeArray24()
-			break
+			case TimeType.hour12:
+				lblAMPM.hidden = false
+
+				startTimes = defaultTimeArray12()
+				endTimes = defaultTimeArray12()
+				break
+
+			case TimeType.hour24:
+				lblAMPM2.hidden = false
+
+				startTimes = defaultTimeArray24()
+				endTimes = defaultTimeArray24()
+				break
+			}
+		} else {
+
+			lblAMPM.hidden = true
+			lblAMPM2.hidden = true
 		}
 	}
 
-	public func setupTimeArray12() {
+	public func defaultTimeArray12() -> [String] {
 
-		lblAMPM.hidden = false
-		lblAMPM2.hidden = false
+		var arr: [String] = []
 
 		for _ in 0...8 {
 			arr.append("")
@@ -207,10 +227,13 @@ public class LFTimePickerController: UIViewController {
 		for _ in 0...8 {
 			arr.append("")
 		}
+
+		return arr
 	}
 
-	public func setupTimeArray24() {
+	public func defaultTimeArray24() -> [String] {
 
+		var arr: [String] = []
 		lblAMPM.hidden = true
 		lblAMPM2.hidden = true
 
@@ -233,6 +256,8 @@ public class LFTimePickerController: UIViewController {
 		for _ in 0...8 {
 			arr.append("")
 		}
+
+		return arr
 	}
 
 	// MARK: Button Methods
@@ -241,7 +266,10 @@ public class LFTimePickerController: UIViewController {
 		let time = self.lblDetail.text!
 		let time2 = self.lblDetail2.text!
 
-		if timeType == .hour12 {
+		if isCustomTime {
+
+			delegate?.didPickTime(time, end: time2)
+		} else if timeType == .hour12 {
 
 			delegate?.didPickTime(time + " \(self.lblAMPM.text!)", end: time2 + " \(self.lblAMPM2.text!)")
 		} else {
@@ -256,6 +284,36 @@ public class LFTimePickerController: UIViewController {
 
 		self.navigationController?.popViewControllerAnimated(true)
 	}
+
+	// MARK - Customisations
+	func customizeTimes(timesArray: [String], time: Time) {
+
+		isCustomTime = true
+		switch time {
+		case .startTime:
+			startTimes = timesArray
+			table.reloadData()
+
+			for _ in 0...8 {
+				startTimes.insert("", atIndex: 0)
+			}
+			for _ in 0...8 {
+				startTimes.append("")
+			}
+
+		case .endTime:
+			endTimes = timesArray
+			table2.reloadData()
+
+			for _ in 0...8 {
+				endTimes.insert("", atIndex: 0)
+			}
+			for _ in 0...8 {
+				endTimes.append("")
+			}
+
+		}
+	}
 }
 
 //MARK: - UITableViewDataSource
@@ -263,18 +321,33 @@ extension LFTimePickerController: UITableViewDataSource {
 
 	public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
 	{
-		return arr.count
+		if tableView == table {
+
+			return startTimes.count
+		} else if tableView == table2 {
+
+			return endTimes.count
+		}
+		return 0
 	}
 
 	public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
 	{
 		var cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell!
-		if !(cell != nil)
-		{
+		if !(cell != nil) {
 			cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
 		}
 
 		// setup cell without force unwrapping it
+		var arr: [String] = []
+		if tableView == table {
+
+			arr = startTimes
+		} else if tableView == table2 {
+
+			arr = endTimes
+		}
+
 		cell.textLabel!.text = arr[indexPath.row]
 		cell.textLabel?.textColor = .whiteColor()
 
@@ -308,7 +381,7 @@ extension LFTimePickerController: UITableViewDelegate {
 
 			let text = table.visibleCells[8]
 			let text2 = table2.visibleCells[8]
-      self.lblDetail.text = text.textLabel?.text
+			self.lblDetail.text = text.textLabel?.text
 
 //			if firstRowIndex != table.indexPathsForVisibleRows?.first?.row {
 //
@@ -337,7 +410,9 @@ extension LFTimePickerController: UITableViewDelegate {
 
 		}
 
-		firstRowIndex = (table.indexPathsForVisibleRows?.first?.row)!
+		if let rowIndex = table.indexPathsForVisibleRows?.first?.row {
+			firstRowIndex = rowIndex
+		}
 
 	}
 }
