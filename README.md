@@ -83,7 +83,8 @@ extension ExampleViewController: LFTimePickerControllerDelegate {
 ```
 
 ## Release History
-
+* 0.2.0
+    * Custom start and end times
 * 0.1.0
     * Added 12h and 24h formats
 * 0.0.3
