@@ -70,7 +70,9 @@ public class LFTimePickerController: UIViewController {
 	public var timeType = TimeType.hour12
 
 	// MARK: - Methods
-	override internal func viewDidLoad() {
+
+	/// Used to load all the setup methods
+	override public func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 
