@@ -9,12 +9,25 @@
 import UIKit
 
 //MARK: - LFTimePickerDelegate
+
+/**
+ Used to return information after user taps the "Save" button
+ - requires: func didPickTime(start: String, end: String)
+ */
+
 public protocol LFTimePickerDelegate: class {
 
-	/// LFTimePickerController: Called after pressing save. Format: hh:mm aa
+	/**
+	 Called after pressing save. Used so the user can call their server to check user's information.
+	 - returns: start and end times in hh:mm aa
+	 */
 	func didPickTime(start: String, end: String)
 }
 
+/**
+ ViewController that handles the Time Picking
+ - customizations: timeType, startTimes, endTimes
+ */
 public class LFTimePickerController: UIViewController {
 
 	// MARK: - Variables
@@ -32,15 +45,24 @@ public class LFTimePickerController: UIViewController {
 	var firstRowIndex = 0
 
 	var isCustomTime = false
+
+	/// Used to customize a 12-hour or 24-hour times
 	public enum TimeType {
 
+		/// Enables AM-PM
 		case hour12
+
+		/// 24-hour format
 		case hour24
 	}
 
+	/// Used for customization of time possibilities
 	public enum Time {
 
+		/// Customizing possible start times
 		case startTime
+
+		/// Customizing possible end times
 		case endTime
 	}
 
@@ -48,7 +70,7 @@ public class LFTimePickerController: UIViewController {
 	public var timeType = TimeType.hour12
 
 	// MARK: - Methods
-	override public func viewDidLoad() {
+	override internal func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 
@@ -62,13 +84,8 @@ public class LFTimePickerController: UIViewController {
 		setupTime()
 	}
 
-	override public func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
-
 	// MARK: Setup
-	public func setupNavigationBar() {
+	private func setupNavigationBar() {
 
 		let saveButton = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: #selector(butSave))
 		saveButton.tintColor = .redColor()
@@ -80,7 +97,7 @@ public class LFTimePickerController: UIViewController {
 		self.navigationItem.leftBarButtonItem = cancelButton
 	}
 
-	public func setupTables() {
+	private func setupTables() {
 
 		let frame1 = CGRect(x: 30, y: 0, width: 100, height: self.view.bounds.height)
 		table = UITableView(frame: frame1, style: .Plain)
@@ -116,7 +133,7 @@ public class LFTimePickerController: UIViewController {
 		self.view.sendSubviewToBack(table2)
 	}
 
-	public func setupDetailView() {
+	private func setupDetailView() {
 
 		detailBackgroundView = UIView(frame: CGRect(x: 0, y: (self.view.bounds.height / 5) * 2, width: self.view.bounds.width, height: self.view.bounds.height / 6))
 		detailBackgroundView.backgroundColor = .whiteColor()
@@ -146,7 +163,7 @@ public class LFTimePickerController: UIViewController {
 		self.view.addSubview(detailBackgroundView)
 	}
 
-	public func setupBottomDetail() {
+	private func setupBottomDetail() {
 
 		let bottomDetailMainBackground = UIView(frame: CGRect(x: 0, y: self.detailBackgroundView.frame.maxY, width: self.view.frame.width, height: 38))
 		bottomDetailMainBackground.backgroundColor = UIColor(red: 255 / 255, green: 128 / 255, blue: 0, alpha: 1)
@@ -175,7 +192,7 @@ public class LFTimePickerController: UIViewController {
 		self.view.addSubview(bottomDetailMainShade)
 	}
 
-	public func setupTime() {
+	private func setupTime() {
 
 		if !isCustomTime {
 
@@ -202,7 +219,7 @@ public class LFTimePickerController: UIViewController {
 		}
 	}
 
-	public func defaultTimeArray12() -> [String] {
+	private func defaultTimeArray12() -> [String] {
 
 		var arr: [String] = []
 
@@ -231,7 +248,7 @@ public class LFTimePickerController: UIViewController {
 		return arr
 	}
 
-	public func defaultTimeArray24() -> [String] {
+	private func defaultTimeArray24() -> [String] {
 
 		var arr: [String] = []
 		lblAMPM.hidden = true
@@ -261,7 +278,7 @@ public class LFTimePickerController: UIViewController {
 	}
 
 	// MARK: Button Methods
-	func butSave() {
+	@objc private func butSave() {
 
 		let time = self.lblDetail.text!
 		let time2 = self.lblDetail2.text!
@@ -280,13 +297,13 @@ public class LFTimePickerController: UIViewController {
 		self.navigationController?.popViewControllerAnimated(true)
 	}
 
-	func butCancel() {
+	@objc private func butCancel() {
 
 		self.navigationController?.popViewControllerAnimated(true)
 	}
 
 	// MARK - Customisations
-	func customizeTimes(timesArray: [String], time: Time) {
+	public func customizeTimes(timesArray: [String], time: Time) {
 
 		isCustomTime = true
 		switch time {
@@ -319,6 +336,7 @@ public class LFTimePickerController: UIViewController {
 //MARK: - UITableViewDataSource
 extension LFTimePickerController: UITableViewDataSource {
 
+	/// Setup of Time cells
 	public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
 	{
 		if tableView == table {
@@ -331,6 +349,7 @@ extension LFTimePickerController: UITableViewDataSource {
 		return 0
 	}
 
+	// Setup of Time cells
 	public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
 	{
 		var cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell!
@@ -359,6 +378,7 @@ extension LFTimePickerController: UITableViewDataSource {
 //MARK: - UITableViewDelegate
 extension LFTimePickerController: UITableViewDelegate {
 
+	/// Used to change AM from PM
 	public func scrollViewDidScroll(scrollView: UIScrollView) {
 
 		if table.visibleCells.count > 8 && table2.visibleCells.count > 8 {
@@ -420,11 +440,11 @@ extension LFTimePickerController: UITableViewDelegate {
 //Got from EZSwiftExtensions
 extension NSTimer {
 
-	public static func runThisAfterDelay(seconds seconds: Double, after: () -> ()) {
+	private static func runThisAfterDelay(seconds seconds: Double, after: () -> ()) {
 		runThisAfterDelay(seconds: seconds, queue: dispatch_get_main_queue(), after: after)
 	}
 
-	public static func runThisAfterDelay(seconds seconds: Double, queue: dispatch_queue_t, after: () -> ()) {
+	private static func runThisAfterDelay(seconds seconds: Double, queue: dispatch_queue_t, after: () -> ()) {
 		let time = dispatch_time(DISPATCH_TIME_NOW, Int64(seconds * Double(NSEC_PER_SEC)))
 		dispatch_after(time, queue, after)
 	}
