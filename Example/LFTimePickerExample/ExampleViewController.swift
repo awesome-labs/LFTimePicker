@@ -24,7 +24,7 @@ class ExampleViewController: UIViewController {
 
 		// Do any additional setup after loading the view.
 		timePicker.delegate = self
-
+        timePicker.timeType = .hour12
 		// Customizing time
 		// let startTimes = ["6:00", "6:30", "7:00", "7:30", "8:00", "8:30"]
 		// let endTimes = ["8:30", "9:00", "9:30", "10:00", "10:30", "11:00"]
@@ -32,7 +32,7 @@ class ExampleViewController: UIViewController {
 		// timePicker.customizeTimes(endTimes, time: .endTime)
 	}
 
-	@IBAction func butShowTime(sender: AnyObject) {
+	@IBAction func butShowTime(_ sender: AnyObject) {
 
 		self.navigationController?.pushViewController(timePicker, animated: true)
 	}
@@ -46,7 +46,7 @@ class ExampleViewController: UIViewController {
 //MARK: - LFTimePickerDelegate
 extension ExampleViewController: LFTimePickerDelegate {
 
-	func didPickTime(start: String, end: String) {
+	func didPickTime(_ start: String, end: String) {
 		self.lblStartSelectedTime.text = start
 
 		self.lblFinishSelectedTime.text = end
