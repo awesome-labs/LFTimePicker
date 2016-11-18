@@ -82,18 +82,6 @@ extension ExampleViewController: LFTimePickerControllerDelegate {
 }
 ```
 
-## Release History
-* 0.2.0
-    * Custom start and end times
-* 0.1.0
-    * Added 12h and 24h formats
-* 0.0.3
-    * Carthage and SPM available
-* 0.0.2
-    * CocoaPods available
-* 0.0.1
-    * Work in progress
-
 ## Contribute
 
 We would love for you to contribute to **LFTimePicker**, check the ``LICENSE`` file for more info.
