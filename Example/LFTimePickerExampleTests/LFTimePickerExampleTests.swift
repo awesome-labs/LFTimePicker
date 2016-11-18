@@ -26,16 +26,25 @@ class LFTimePickerExampleTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testTimeArray12h() {
+        let timePicker = LFTimePickerController()
+        let timeStringArray = timePicker.defaultTimeArray12()
+        
+        let ampm = 2
+        let hours = 12
+        let minutes = 12
+        let spaces = 9 + 9
+        XCTAssertEqual(timeStringArray.count, spaces + (ampm * hours * minutes))
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+    func testTimeArray24h() {
+        
+        let timePicker = LFTimePickerController()
+        let timeStringArray = timePicker.defaultTimeArray12()
+        
+        let hours = 24
+        let minutes = 12
+        let spaces = 9 + 9
+        XCTAssertEqual(timeStringArray.count, spaces + (hours * minutes))
+    }    
 }

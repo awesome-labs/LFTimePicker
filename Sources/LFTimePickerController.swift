@@ -55,6 +55,9 @@ open class LFTimePickerController: UIViewController {
     var lblAMPM = UILabel()
     var lblAMPM2 = UILabel()
     var firstRowIndex = 0
+    var lastSelectedLeft = "00:00"
+    var lastSelectedRight = "00:00"
+
     
     var isCustomTime = false
     
@@ -88,6 +91,12 @@ open class LFTimePickerController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+    }
+    
+    var alreadyLayout = false
+    open override func viewWillLayoutSubviews() {
+        
+        if !alreadyLayout {
         self.title = "Change Time"
         self.view.backgroundColor = UIColor(red: 255 / 255, green: 128 / 255, blue: 0, alpha: 1)
         
@@ -96,6 +105,9 @@ open class LFTimePickerController: UIViewController {
         setupBottomDetail()
         setupNavigationBar()
         setupTime()
+            
+            alreadyLayout = true
+        }
     }
     
     // MARK: Setup
@@ -214,14 +226,16 @@ open class LFTimePickerController: UIViewController {
                 
             case TimeType.hour12:
                 lblAMPM.isHidden = false
-                
+                lblAMPM2.isHidden = false
+
                 startTimes = defaultTimeArray12()
                 endTimes = defaultTimeArray12()
                 break
                 
             case TimeType.hour24:
-                lblAMPM2.isHidden = false
-                
+                lblAMPM.isHidden = true
+                lblAMPM2.isHidden = true
+
                 startTimes = defaultTimeArray24()
                 endTimes = defaultTimeArray24()
                 break
@@ -233,7 +247,7 @@ open class LFTimePickerController: UIViewController {
         }
     }
     
-    fileprivate func defaultTimeArray12() -> [String] {
+    func defaultTimeArray12() -> [String] {
         
         var arr: [String] = []
         
@@ -261,8 +275,6 @@ open class LFTimePickerController: UIViewController {
                         arr.append("\(hr):\(minute)")
                     }
                 }
-                
-                leftTimeTable.reloadData()
             }
         }
         
@@ -273,7 +285,7 @@ open class LFTimePickerController: UIViewController {
         return arr
     }
     
-    fileprivate func defaultTimeArray24() -> [String] {
+    func defaultTimeArray24() -> [String] {
         
         var arr: [String] = []
         lblAMPM.isHidden = true
@@ -408,27 +420,47 @@ extension LFTimePickerController: UITableViewDelegate {
     /// Used to change AM from PM
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        if leftTimeTable.visibleCells.count > 8 && rightTimeTable.visibleCells.count > 8 {
+        if leftTimeTable.visibleCells.count > 8 {
             
             let isLeftAM = leftTimeTable.indexPathsForVisibleRows?.first?.row < 48 * 3
             self.lblAMPM.text = isLeftAM ? "AM" : "PM"
             
-            let isRightAM = rightTimeTable.indexPathsForVisibleRows?.first?.row < 48 * 3
-            self.lblAMPM2.text = isRightAM ? "AM" : "PM"
             
             let text = leftTimeTable.visibleCells[8]
+            if text.textLabel?.text != "" {
+                self.lblLeftTimeSelected.text = text.textLabel?.text
+                lastSelectedLeft = (text.textLabel?.text!)!
+            } else {
+                self.lblLeftTimeSelected.text = lastSelectedLeft
+
+            }
+
+        } else {
+            self.lblLeftTimeSelected.text = "00:00"
+        }
+        
+        if rightTimeTable.visibleCells.count > 8 {
+            let isRightAM = rightTimeTable.indexPathsForVisibleRows?.first?.row < 48 * 3
+            self.lblAMPM2.text = isRightAM ? "AM" : "PM"
             let text2 = rightTimeTable.visibleCells[8]
-            self.lblLeftTimeSelected.text = text.textLabel?.text
             
             if text2.textLabel?.text != "" {
                 self.lblRightTimeSelected.text = text2.textLabel?.text
+                lastSelectedRight = (text2.textLabel?.text!)!
+            } else {
+                self.lblRightTimeSelected.text = lastSelectedRight
             }
-            
+        } else {
+            lblRightTimeSelected.text = "00:00"
         }
         
         if let rowIndex = leftTimeTable.indexPathsForVisibleRows?.first?.row {
             firstRowIndex = rowIndex
         }
+        if let rowIndex = rightTimeTable.indexPathsForVisibleRows?.first?.row {
+            firstRowIndex = rowIndex
+        }
+
         
     }
 }
