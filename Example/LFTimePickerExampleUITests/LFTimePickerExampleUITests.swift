@@ -27,7 +27,6 @@ class LFTimePickerExampleUITests: XCTestCase {
     
     func testSelectingTime() {
        
-        
         let app = XCUIApplication()
         app.buttons["Choose time"].tap()
 

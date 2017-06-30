@@ -84,6 +84,12 @@ open class LFTimePickerController: UIViewController {
     /// Hour Format: 12h (default) or 24h format
     open var timeType = TimeType.hour12
     
+    open var backgroundColor = UIColor(red: 255 / 255, green: 128 / 255, blue: 0, alpha: 1)
+    
+    open var titleText: String = "Change Time"
+    open var saveText: String = "Save"
+    open var cancelText: String = "Cancel"
+
     // MARK: - Methods
     
     /// Used to load all the setup methods
@@ -97,8 +103,8 @@ open class LFTimePickerController: UIViewController {
     open override func viewWillLayoutSubviews() {
         
         if !alreadyLayout {
-        self.title = "Change Time"
-        self.view.backgroundColor = UIColor(red: 255 / 255, green: 128 / 255, blue: 0, alpha: 1)
+        self.title = titleText
+        self.view.backgroundColor = backgroundColor
         
         setupTables()
         setupDetailView()
@@ -113,10 +119,10 @@ open class LFTimePickerController: UIViewController {
     // MARK: Setup
     fileprivate func setupNavigationBar() {
         
-        let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(butSave))
+        let saveButton = UIBarButtonItem(title: saveText, style: .plain, target: self, action: #selector(butSave))
         saveButton.tintColor = .red
         
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(butCancel))
+        let cancelButton = UIBarButtonItem(title: cancelText, style: .plain, target: self, action: #selector(butCancel))
         cancelButton.tintColor = .red
         
         self.navigationItem.rightBarButtonItem = saveButton
