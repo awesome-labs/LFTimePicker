@@ -22,14 +22,20 @@ class ExampleViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		// Do any additional setup after loading the view.
 		timePicker.delegate = self
         timePicker.timeType = .hour12
+        
 		// Customizing time
 		// let startTimes = ["6:00", "6:30", "7:00", "7:30", "8:00", "8:30"]
 		// let endTimes = ["8:30", "9:00", "9:30", "10:00", "10:30", "11:00"]
 		// timePicker.customizeTimes(startTimes, time: .startTime)
 		// timePicker.customizeTimes(endTimes, time: .endTime)
+        
+        // Customizing UI
+//        timePicker.backgroundColor = .purple
+//        timePicker.titleText = "Choose the perfect time"
+//        timePicker.saveText = "Yes"
+//        timePicker.cancelText = "No"
 	}
 
 	@IBAction func butShowTime(_ sender: AnyObject) {
@@ -43,7 +49,7 @@ class ExampleViewController: UIViewController {
 	}
 }
 
-//MARK: - LFTimePickerDelegate
+// MARK: - LFTimePickerDelegate
 extension ExampleViewController: LFTimePickerDelegate {
 
 	func didPickTime(_ start: String, end: String) {
